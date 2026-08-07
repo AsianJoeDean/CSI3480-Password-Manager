@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+</head>
+<body>
+    <div>
+        <h1> Create Your Account Login</h1>
+        <form>
+         <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+       <button type="submit">Login</button>
+    </div>
+        </form>
+    
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            if(!email || !password || !username){
+                alert('Please enter your email, username, and password.')
+                return false;
+            }
+            return true;
+        }
+    </script>
+    
+</body>
+</html>
