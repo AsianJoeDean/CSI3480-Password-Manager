@@ -27,6 +27,7 @@
     
     <script>
         function login(event) {
+            // Prevent the form from refreshing the page
             event.preventDefault(); 
             
             const username = document.getElementById('username').value;
@@ -38,8 +39,13 @@
                 return false;
             }
             
-            window.location.href = 'passwordmanagement.html';
-            return true;
+            if (username === 'bubblegum' && email === 'bubblegumboy12@gmail.com' && password === 'bubblegum45$') {
+                window.location.href = 'passwordmanagement.html';
+                return true;
+            } else {
+                alert('Incorrect username, email, or password. Please try again.');
+                return false;
+            }
         }
     </script>
 </body>
