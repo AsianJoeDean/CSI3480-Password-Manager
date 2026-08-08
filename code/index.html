@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"/>
-    <title>Password Manager and Generator</title>
+    <link rel="icon" href="/code/favicon/Password Logo.jpg" type="image/jpeg"/>
+    <title>Password Management</title>
 </head>
 <body>
-    <h3>Hello, Welcome to Password Manager and Generator!</h3>
-    <button>Create an account</button>
-    <button>Generate a Password!</button>
+    <div>
+        <h3>My Passwords</h3>
+        
+        <div class="form-group">
+            <input type="text" id="website" placeholder="Website (e.g., GitHub)">
+            <input type="text" id="password" placeholder="Generated Password">
+            <button onclick="fillGeneratedPassword()">Generate Secure Password</button>
+            <button onclick="saveToVault()">Save to Vault</button>
+        </div>
+
+        <hr>
+        <div id="vaultDisplay"></div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
