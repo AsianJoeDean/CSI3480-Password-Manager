@@ -8,18 +8,48 @@
     <title>Password Management</title>
 </head>
 <body>
-    <div>
-        <h3>My Passwords</h3>
-        
-        <div class="form-group">
-            <input type="text" id="website" placeholder="Website (e.g., GitHub)">
-            <input type="text" id="password" placeholder="Generated Password">
-            <button onclick="fillGeneratedPassword()">Generate Secure Password</button>
-            <button onclick="saveToVault()">Save to Vault</button>
+    <div id="mainContainer">
+        <div id="loginSection">
+            <h1>Password Manager</h1>
+
+            <div id="createMasterSection" style="display: none;">
+                <h3>Create Master Password</h3>
+                <div class="form-group">
+                    <input type="password" id="createMasterPassword" placeholder="Master Password">
+                    <input type="password" id="confirmMasterPassword" placeholder="Confirm Master Password">
+                    <button onclick="createMasterPassword()">Create Vault</button>
+                </div>
+            </div>
+
+            <div id="unlockSection" style="display: none;">
+                <h3>Unlock Vault</h3>
+                <div class="form-group">
+                    <input type="password" id="masterPassword" placeholder="Master Password">
+                    <button onclick="unlockVault()">Unlock</button>
+                </div>
+            </div>
         </div>
 
-        <hr>
-        <div id="vaultDisplay"></div>
+        <div id="vaultSection" style="display: none;">
+            <h3>My Passwords</h3>
+
+            <div class="form-group">
+                <input type="text" id="website" placeholder="Website (e.g., GitHub)">
+                <input type="text" id="username" placeholder="Username / Email">
+                <input type="text" id="password" placeholder="Generated Password">
+
+                <label for="passwordLength">Password Length:</label>
+                <input type="number" id="passwordLength" min="8" max="32" value="16">
+
+                <button onclick="fillGeneratedPassword()">Generate Secure Password</button>
+                <button onclick="saveToVault()">Save to Vault</button>
+                <button onclick="lockVault()">Lock Vault</button>
+                <button onclick="resetVault()">Reset Vault</button>
+            </div>
+
+            <hr>
+            <div id="vaultDisplay"></div>
+        </div>
     </div>
 
     <script src="app.js"></script>
